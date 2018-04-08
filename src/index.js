@@ -26,7 +26,7 @@ const addThatMovie = (movie) => {
 const onGetSimilarClick = (movie, parentIndex) => {
   const completeUrl ='https://api.themoviedb.org/3/movie/'
     + movie.id
-    + '/recommendations?api_key=YOUR_API_KEY'
+    + '/recommendations?api_key=' + process.env.REACT_APP_TMDB_API_KEY + ''
   axios.get(completeUrl, {
       header: {
         "Content-Type": "application/json"
@@ -72,7 +72,7 @@ const Movie = ({index}) => {
 
 const onSearchChange = () => {
   const completeUrl ='https://api.themoviedb.org/3/search/movie'
-    + '?api_key=YOUR_API_KEY'
+    + '?api_key=' + process.env.REACT_APP_TMDB_API_KEY
     + '&query='
     + document.getElementById("searchField").value
   axios.get(completeUrl, {
