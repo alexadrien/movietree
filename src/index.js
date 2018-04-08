@@ -82,7 +82,6 @@ const onSearchChange = () => {
     })
     .then(function (response) {
       store.dispatch({type:"REMOVE_ALL"})
-      console.log(response.data.results)
       for(var i=0; i<response.data.results.length; i++){
         store.dispatch({
           type:"ADD_MOVIE_SEARCH",
