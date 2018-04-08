@@ -86,7 +86,9 @@ const onSearchChange = () => {
         store.dispatch({
           type:"ADD_MOVIE_SEARCH",
           title: response.data.results[i].title,
-          poster: response.data.results[i].poster_path != null ? "https://image.tmdb.org/t/p/w500" + response.data.results[i].poster_path : "",
+          poster: response.data.results[i].poster_path != null ?
+          "https://image.tmdb.org/t/p/w500" + response.data.results[i].poster_path
+          : "",
           id: response.data.results[i].id,
         })
       }
